@@ -1,9 +1,13 @@
+'use client'
 import { NAV_LINKS } from "@/constants"
 import Image from "next/image"
 import Link from "next/link"
 import Button from "./Button"
+import { usePathname } from "next/navigation"
+import { motion } from "framer-motion"
 
 const Navbar = () => {
+  const path = usePathname();
   return (
 
     <nav className="flexBetween max-container padding-container relative z-30 py-5">
@@ -13,10 +17,16 @@ const Navbar = () => {
 
       <ul className="hidden h-full gap-12 lg:flex">
         {NAV_LINKS.map((link) => (
-          <Link href={link.href} key={link.key} className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold">
+          <div className="relative
+          ">
+            <Link href={link.href} key={link.key} className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:text-primary">
             {link.label}
-          </Link>
+            </Link>
+            {link.href==path&&<motion.span initial={{y:'-100%'}} animate={{y:'0px'}} transition={{type:"tween",duration:.7}} layoutId="underline" className="absolute left-0 h-[2px] top-full bg-purple-500 w-full"/>}
+          
+          </div>
         ))}
+
       </ul>
 
       <div className="lg:flexCenter hidden">

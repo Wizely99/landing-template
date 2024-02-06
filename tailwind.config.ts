@@ -19,6 +19,10 @@ const config = {
     },
     extend: {
       colors: {
+        // primary: "#54BD95",
+        footerBackground: "#161C28",
+        // dark: "#191A15",
+        customGray: "#A6A6A6",
         green: {
           50: '#30AF5B',
           90: '#292C27',
