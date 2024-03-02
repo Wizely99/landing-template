@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import styles from "./pricing.module.css";
 
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import Pricing from "@/components/Pricing";
 
 export interface PricingTierFrequency {
   id: string;
@@ -39,8 +39,8 @@ const tiers: PricingTier[] = [
     name: "Free",
     id: "0",
     href: "/subscribe",
-    price: { "1": "$10", "2": "$100", "3": "$25" },
-    discountPrice: { "1": "", "2": "", "3": "" },
+    price: { "1": "10,000 Tsh", "2": "120,000 Tsh", "3": "30,000 Tsh" },
+    discountPrice: { "1": "", "2": "100,000 Tsh", "3": "27,500 Tsh" },
     description: `Get all goodies for free, no credit card required.`,
     features: [
       `Multi-platform compatibility`,
@@ -56,16 +56,16 @@ const tiers: PricingTier[] = [
     name: "Pro",
     id: "1",
     href: "/subscribe",
-    price: { "1": "$3.99", "2": "$49.99", "3": "" },
-    discountPrice: { "1": "", "2": "", "3": "" },
+    price: { "1": "30,000 Tsh", "2": "360,000", "3": "90,000 Tsh" },
+    discountPrice: { "1": "", "2": "300,000 Tsh", "3": "80,000 Tsh" },
     description: `When you grow, need more power and flexibility.`,
     features: [
       `All in the free plan plus`,
       `Customizable templates`,
       `Integration with third-party apps`,
     ],
-    featured: false,
-    highlighted: true,
+    featured: true,
+    highlighted: false,
     soldOut: false,
     cta: `Get started`,
   },
@@ -73,8 +73,8 @@ const tiers: PricingTier[] = [
     name: "Scaler",
     id: "2",
     href: "/contact-us",
-    price: { "1": "$14.99", "2": "$179.88", "3": "" },
-    discountPrice: { "1": "100", "2": "50", "3": "50" },
+    price: { "1": "50,000 Tsh", "2": "600,000 Tsh", "3": "150,000 Tsh" },
+    discountPrice: { "1": "", "2": "500,000 Tsh", "3": "135,000 Tsh" },
     description: `When you grow, need more power and flexibility.`,
     features: [
       `All in the pro plan plus`,
@@ -108,27 +108,24 @@ const CheckIcon = ({ className }: { className?: string }) => {
 export default function PricingPage() {
   const [frequency, setFrequency] = useState(frequencies[0]);
 
-  const bannerText = "";
+  // const bannerText = "";
 
   return (
-    <div
-      className={cn("flex flex-col w-full items-center", styles.fancyOverlay)}
-    >
+    <div className={cn("flex flex-col w-full mt-16 items-center")}>
       <div className="w-full flex flex-col items-center">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center">
           <div className="w-full lg:w-auto mx-auto max-w-4xl lg:text-center">
+            <div className="text-3xl text-gray-950 font-bold p-2 sm:p-6 sm:pb-2">
+              Transition to the Future of POS Systems! 🚀
+            </div>
+            <div className="p-4 text-gray-700">
+              Tired of cash registers that look like they belong in a museum?
+              Say goodbye to clunky interfaces and hello to QuenchX
+            </div>
             <h1 className="text-black dark:text-white text-4xl font-semibold max-w-xs sm:max-w-none md:text-6xl !leading-tight">
-              Pricing
+              Our Pricing
             </h1>
           </div>
-
-          {bannerText ? (
-            <div className="w-full lg:w-auto flex justify-center my-4">
-              <p className="w-full px-4 py-3 text-xs bg-purple-100 text-black dark:bg-purple-300/30 dark:text-white/80 rounded-xl">
-                {bannerText}
-              </p>
-            </div>
-          ) : null}
 
           {frequencies.length > 1 ? (
             <div className="mt-16 flex justify-center">
@@ -147,7 +144,7 @@ export default function PricingPage() {
                   <Label
                     className={cn(
                       frequency.value === option.value
-                        ? "bg-purple-500/90 text-white dark:bg-purple-900/70 dark:text-white/70"
+                        ? "bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white dark:bg-purple-900/70 dark:text-white/70"
                         : "bg-transparent text-gray-500 hover:bg-purple-500/10",
                       "cursor-pointer rounded-full px-2.5 py-2 transition-all"
                     )}
@@ -184,7 +181,9 @@ export default function PricingPage() {
                     ? "!bg-gray-900 ring-gray-900 dark:!bg-gray-100 dark:ring-gray-100"
                     : "bg-white dark:bg-gray-900/80 ring-gray-300/70 dark:ring-gray-700",
                   "max-w-xs ring-1 rounded-3xl p-8 xl:p-10",
-                  tier.highlighted ? styles.fancyGlassContrast : ""
+                  tier.highlighted
+                    ? " bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700"
+                    : ""
                 )}
               >
                 <h3
@@ -307,6 +306,37 @@ export default function PricingPage() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      <div className="">
+        <div className="max-w-5xl mx-auto p-6 bg-gray-100 rounded-3xl shadow-lg">
+          <p className="text-lg font-semibold text-center text-gray-800 mb-4">
+            Still not convinced?
+          </p>
+          <p className="text-sm text-center text-gray-600 mb-8">
+            <div className="bg-gray-100 rounded-lg p-6  mx-auto">
+              <h2 className="text-2xl font-bold mb-4">
+                🚀 Try Our Service Risk-Free!
+              </h2>
+              <p className="text-lg mb-4">
+                Take us for a spin before you commit. It's like a test drive,
+                but for your business! 🚗
+              </p>
+              <p className="text-lg mb-4">
+                24/7 customer support: We're here for you, even if your question
+                is "Why is my dog eating the receipt?" (we don't have an answer
+                for that one, but we'll try our best to help). 🐶
+              </p>
+              <p className="text-lg mb-4">
+                So ditch the outdated POS and join the revolution! 🔥
+              </p>
+              <p className="text-lg mb-4">
+                P.S. We also offer a free consultation to help you choose the
+                perfect plan for your business. Because we're nice like that. 🎉
+              </p>
+            </div>
+          </p>
         </div>
       </div>
     </div>

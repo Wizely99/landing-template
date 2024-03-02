@@ -41,7 +41,7 @@ export const FEATURES = [
     icon: '/tech.svg',
     variant: 'green',
     description:
-      '      Say goodbye to stock-related headaches! Our advanced inventory management system helps you keep track of your beverage inventory in real-time. Set automatic low-stock alerts, monitor expiration dates, and optimize your supply chain effortlessly.'
+      '  Keep track of your stock with ease, so you never have to say \" I\'m out \" to your special  customers.Set automatic low - stock alerts, monitor expiration dates, and optimize your supply chain effortlessly.'
   },
   {
     title: 'Intuitive Point of Sale (POS) System',

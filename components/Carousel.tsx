@@ -13,7 +13,7 @@ import { CAROUSAL_PICTURES } from "@/constants";
 
 export function CarouselPlugin() {
   const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: false })
+    Autoplay({ delay: 2000, stopOnInteraction: false })
   );
 
   return (
@@ -47,13 +47,14 @@ export function CarouselPlugin() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      <div className="px-96 text-3xl py-8 gap-8 flex flex-col w-full">
-        <div className="font-semibold text-gray-700">
-          Ready to Elevate Your Beverage Sales?
-        </div>
-        <div className="ml-96 flex text-xl bg-purple-800 text-gray-100 w-fit px-8 py-3 rounded-full justify-end">
-          Try Now for free
-        </div>
+
+      <div className="mt-12 w-full justify-center max-w-5xl gap-4 py-6 px-8 md:py-8 md:px-12 rounded-lg shadow-md flex items-center transition duration-300 ease-in-out">
+        <p className="text-center text-gray-800 text-sm md:text-base lg:text-lg">
+          Upgrade to our POS for seamless transactions and enhanced efficiency!
+        </p>
+        <button className="whitespace-nowrap w-28 text-sm bg-gradient-to-r from-purple-500 to-purple-600 text-white   font-bold py-3 px-6 rounded-md shadow-md hover:bg-purple-100 transition duration-500 ease-in-out">
+          Start Now
+        </button>
       </div>
     </div>
   );
