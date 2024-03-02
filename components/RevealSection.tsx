@@ -1,15 +1,16 @@
 // RevealSection.tsx
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 interface RevealSectionProps {
   children: React.ReactNode;
 }
 
 const RevealSection: React.FC<RevealSectionProps> = ({ children }) => {
-  const [ref, inView] = useInView({
-      triggerOnce: false,
-      rootMargin: `-250px 0px`,
+  const ref = useRef(null);
+  const inView = useInView(ref, {
+    once: false,
+    margin: "-200px -200px -200px -200px",
   });
 
   const variants = {
@@ -21,9 +22,9 @@ const RevealSection: React.FC<RevealSectionProps> = ({ children }) => {
     <motion.div
       ref={ref}
       initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
+      animate={inView ? "visible" : "hidden"}
       variants={variants}
-      transition={{ duration: 0.6, ease: 'easeInOut' }}
+      transition={{ duration: 0.7, ease: "easeInOut" }}
     >
       {children}
     </motion.div>

@@ -1,4 +1,9 @@
 // NAVIGATION
+export type NavLink = {
+  href: string;
+  key: string;
+  label: string;
+};
 export const NAV_LINKS = [
   { href: '/', key: 'home', label: 'Home' },
   { href: '/working', key: 'how_quenchx_work', label: 'How QuenchX Work?' },

@@ -1,11 +1,11 @@
-'use client';
-import { useState } from 'react';
-import { cn } from '@/lib/utils';
-import styles from './pricing.module.css';
+"use client";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+import styles from "./pricing.module.css";
 
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Label } from '@/components/ui/label';
-import { Button } from '@/components/ui/button';
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 
 export interface PricingTierFrequency {
   id: string;
@@ -28,19 +28,19 @@ export interface PricingTier {
   soldOut?: boolean;
 }
 
-export const frequencies: PricingTierFrequency[] = [
-  { id: '1', value: '1', label: 'Monthly', priceSuffix: '/month' },
-  { id: '2', value: '2', label: 'Annually', priceSuffix: '/year' },
-  { id: '3', value: '3', label: 'Quarterly', priceSuffix: '/quarter' },
+const frequencies: PricingTierFrequency[] = [
+  { id: "1", value: "1", label: "Monthly", priceSuffix: "/month" },
+  { id: "2", value: "2", label: "Annually", priceSuffix: "/year" },
+  { id: "3", value: "3", label: "Quarterly", priceSuffix: "/quarter" },
 ];
 
-export const tiers: PricingTier[] = [
+const tiers: PricingTier[] = [
   {
-    name: 'Free',
-    id: '0',
-    href: '/subscribe',
-    price: { '1': '$10', '2': '$100', '3': '$25' },
-    discountPrice: { '1': '', '2': '', '3': '' },
+    name: "Free",
+    id: "0",
+    href: "/subscribe",
+    price: { "1": "$10", "2": "$100", "3": "$25" },
+    discountPrice: { "1": "", "2": "", "3": "" },
     description: `Get all goodies for free, no credit card required.`,
     features: [
       `Multi-platform compatibility`,
@@ -53,11 +53,11 @@ export const tiers: PricingTier[] = [
     cta: `Get Started`,
   },
   {
-    name: 'Pro',
-    id: '1',
-    href: '/subscribe',
-    price: { '1': '$3.99', '2': '$49.99', '3': '' },
-    discountPrice: { '1': '', '2': '', '3': '' },
+    name: "Pro",
+    id: "1",
+    href: "/subscribe",
+    price: { "1": "$3.99", "2": "$49.99", "3": "" },
+    discountPrice: { "1": "", "2": "", "3": "" },
     description: `When you grow, need more power and flexibility.`,
     features: [
       `All in the free plan plus`,
@@ -70,11 +70,11 @@ export const tiers: PricingTier[] = [
     cta: `Get started`,
   },
   {
-    name: 'Scaler',
-    id: '2',
-    href: '/contact-us',
-    price: { '1': '$14.99', '2': '$179.88', '3': '' },
-    discountPrice: { '1': '100', '2': '50', '3': '50' },
+    name: "Scaler",
+    id: "2",
+    href: "/contact-us",
+    price: { "1": "$14.99", "2": "$179.88", "3": "" },
+    discountPrice: { "1": "100", "2": "50", "3": "50" },
     description: `When you grow, need more power and flexibility.`,
     features: [
       `All in the pro plan plus`,
@@ -94,7 +94,7 @@ const CheckIcon = ({ className }: { className?: string }) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className={cn('w-6 h-6', className)}
+      className={cn("w-6 h-6", className)}
     >
       <path
         fillRule="evenodd"
@@ -108,11 +108,11 @@ const CheckIcon = ({ className }: { className?: string }) => {
 export default function PricingPage() {
   const [frequency, setFrequency] = useState(frequencies[0]);
 
-  const bannerText = '';
+  const bannerText = "";
 
   return (
     <div
-      className={cn('flex flex-col w-full items-center', styles.fancyOverlay)}
+      className={cn("flex flex-col w-full items-center", styles.fancyOverlay)}
     >
       <div className="w-full flex flex-col items-center">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center">
@@ -120,7 +120,6 @@ export default function PricingPage() {
             <h1 className="text-black dark:text-white text-4xl font-semibold max-w-xs sm:max-w-none md:text-6xl !leading-tight">
               Pricing
             </h1>
-            
           </div>
 
           {bannerText ? (
@@ -148,9 +147,9 @@ export default function PricingPage() {
                   <Label
                     className={cn(
                       frequency.value === option.value
-                        ? 'bg-purple-500/90 text-white dark:bg-purple-900/70 dark:text-white/70'
-                        : 'bg-transparent text-gray-500 hover:bg-purple-500/10',
-                      'cursor-pointer rounded-full px-2.5 py-2 transition-all',
+                        ? "bg-purple-500/90 text-white dark:bg-purple-900/70 dark:text-white/70"
+                        : "bg-transparent text-gray-500 hover:bg-purple-500/10",
+                      "cursor-pointer rounded-full px-2.5 py-2 transition-all"
                     )}
                     key={option.value}
                     htmlFor={option.value}
@@ -172,9 +171,9 @@ export default function PricingPage() {
 
           <div
             className={cn(
-              'isolate mx-auto mt-4 mb-28 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none',
-              tiers.length === 2 ? 'lg:grid-cols-2' : '',
-              tiers.length === 3 ? 'lg:grid-cols-3' : '',
+              "isolate mx-auto mt-4 mb-28 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none",
+              tiers.length === 2 ? "lg:grid-cols-2" : "",
+              tiers.length === 3 ? "lg:grid-cols-3" : ""
             )}
           >
             {tiers.map((tier) => (
@@ -182,17 +181,19 @@ export default function PricingPage() {
                 key={tier.id}
                 className={cn(
                   tier.featured
-                    ? '!bg-gray-900 ring-gray-900 dark:!bg-gray-100 dark:ring-gray-100'
-                    : 'bg-white dark:bg-gray-900/80 ring-gray-300/70 dark:ring-gray-700',
-                  'max-w-xs ring-1 rounded-3xl p-8 xl:p-10',
-                  tier.highlighted ? styles.fancyGlassContrast : '',
+                    ? "!bg-gray-900 ring-gray-900 dark:!bg-gray-100 dark:ring-gray-100"
+                    : "bg-white dark:bg-gray-900/80 ring-gray-300/70 dark:ring-gray-700",
+                  "max-w-xs ring-1 rounded-3xl p-8 xl:p-10",
+                  tier.highlighted ? styles.fancyGlassContrast : ""
                 )}
               >
                 <h3
                   id={tier.id}
                   className={cn(
-                    tier.featured ? 'text-white dark:text-black' : 'text-black dark:text-white',
-                    'text-2xl font-bold tracking-tight',
+                    tier.featured
+                      ? "text-white dark:text-black"
+                      : "text-black dark:text-white",
+                    "text-2xl font-bold tracking-tight"
                   )}
                 >
                   {tier.name}
@@ -200,9 +201,9 @@ export default function PricingPage() {
                 <p
                   className={cn(
                     tier.featured
-                      ? 'text-gray-300 dark:text-gray-500'
-                      : 'text-gray-600 dark:text-gray-400',
-                    'mt-4 text-sm leading-6',
+                      ? "text-gray-300 dark:text-gray-500"
+                      : "text-gray-600 dark:text-gray-400",
+                    "mt-4 text-sm leading-6"
                   )}
                 >
                   {tier.description}
@@ -210,35 +211,42 @@ export default function PricingPage() {
                 <p className="mt-6 flex items-baseline gap-x-1">
                   <span
                     className={cn(
-                      tier.featured ? 'text-white dark:text-black' : 'text-black dark:text-white',
-                      'text-4xl font-bold tracking-tight',
-                      tier.discountPrice && tier.discountPrice[frequency.value]
-                        ? 'line-through'
-                        : '',
+                      tier.featured
+                        ? "text-white dark:text-black"
+                        : "text-black dark:text-white",
+                      "text-4xl font-bold tracking-tight",
+                      tier.discountPrice &&
+                        (tier.discountPrice as Record<string, string>)[
+                          frequency.value
+                        ]
+                        ? "line-through"
+                        : ""
                     )}
                   >
-                    {typeof tier.price === 'string'
+                    {typeof tier.price === "string"
                       ? tier.price
                       : tier.price[frequency.value]}
                   </span>
 
                   <span
                     className={cn(
-                      tier.featured ? 'text-white dark:text-black' : 'text-black dark:text-white',
+                      tier.featured
+                        ? "text-white dark:text-black"
+                        : "text-black dark:text-white"
                     )}
                   >
-                    {typeof tier.discountPrice === 'string'
+                    {typeof tier.discountPrice === "string"
                       ? tier.discountPrice
                       : tier.discountPrice[frequency.value]}
                   </span>
 
-                  {typeof tier.price !== 'string' ? (
+                  {typeof tier.price !== "string" ? (
                     <span
                       className={cn(
                         tier.featured
-                          ? 'text-gray-300 dark:text-gray-500'
-                          : 'dark:text-gray-400 text-gray-600',
-                        'text-sm font-semibold leading-6',
+                          ? "text-gray-300 dark:text-gray-500"
+                          : "dark:text-gray-400 text-gray-600",
+                        "text-sm font-semibold leading-6"
                       )}
                     >
                       {frequency.priceSuffix}
@@ -249,44 +257,46 @@ export default function PricingPage() {
                   href={tier.href}
                   aria-describedby={tier.id}
                   className={cn(
-                    'flex mt-6 shadow-sm',
-                    tier.soldOut ? 'pointer-events-none' : '',
+                    "flex mt-6 shadow-sm",
+                    tier.soldOut ? "pointer-events-none" : ""
                   )}
                 >
                   <Button
                     size="lg"
                     disabled={tier.soldOut}
                     className={cn(
-                      'w-full text-black dark:text-white',
+                      "w-full text-black dark:text-white",
                       !tier.highlighted && !tier.featured
-                        ? 'bg-gray-100 dark:bg-gray-600'
-                        : 'bg-purple-300 hover:bg-purple-400 dark:bg-purple-600 dark:hover:bg-purple-700',
-                        tier.featured || tier.soldOut ? 'bg-white dark:bg-neutral-900 hover:bg-gray-200 dark:hover:bg-black' : 'hover:opacity-80 transition-opacity',
+                        ? "bg-gray-100 dark:bg-gray-600"
+                        : "bg-purple-300 hover:bg-purple-400 dark:bg-purple-600 dark:hover:bg-purple-700",
+                      tier.featured || tier.soldOut
+                        ? "bg-white dark:bg-neutral-900 hover:bg-gray-200 dark:hover:bg-black"
+                        : "hover:opacity-80 transition-opacity"
                     )}
-                    variant={tier.highlighted ? 'default' : 'outline'}
+                    variant={tier.highlighted ? "default" : "outline"}
                   >
-                    {tier.soldOut ? 'Sold out' : tier.cta}
+                    {tier.soldOut ? "Sold out" : tier.cta}
                   </Button>
                 </a>
 
                 <ul
                   className={cn(
                     tier.featured
-                      ? 'text-gray-300 dark:text-gray-500'
-                      : 'text-gray-700 dark:text-gray-400',
-                    'mt-8 space-y-3 text-sm leading-6 xl:mt-10',
+                      ? "text-gray-300 dark:text-gray-500"
+                      : "text-gray-700 dark:text-gray-400",
+                    "mt-8 space-y-3 text-sm leading-6 xl:mt-10"
                   )}
                 >
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex gap-x-3">
                       <CheckIcon
                         className={cn(
-                          tier.featured ? 'text-white dark:text-black' : '',
+                          tier.featured ? "text-white dark:text-black" : "",
                           tier.highlighted
-                            ? 'text-purple-500'
-                            : 'text-gray-500',
+                            ? "text-purple-500"
+                            : "text-gray-500",
 
-                          'h-6 w-5 flex-none',
+                          "h-6 w-5 flex-none"
                         )}
                         aria-hidden="true"
                       />

@@ -1,19 +1,16 @@
-'use client'
 import React from "react";
 import { Input } from "./ui/input";
-import Image from 'next/image'
-import Link from 'next/link'
-import RevealSection from './RevealSection'
+import Image from "next/image";
+import Link from "next/link";
 function FooterSection() {
   return (
-    <RevealSection>
-    <section className="mt-16 md:mt-[14rem] flex flex-col gap-[5rem] md:gap-[10rem] md:flex-row justify-between w-full  bg-footerBackground  px-[4rem] pt-[7.6rem] pb-[2.5rem]">
+    <section className="mt-4 md:mt-[5rem] flex flex-col gap-[5rem] md:gap-[10rem] md:flex-row justify-between w-full  bg-footerBackground  px-[4rem] pt-[7.6rem] pb-[2.5rem]">
       <div>
-      <div className="rounded-full w-fit bg-white">
+        <div className="rounded-full w-fit bg-white">
           <Link href="/" className="mb-10">
-            <Image src="hilink-logo.svg" alt="logo" width={74} height={29}/>
+            <Image src="hilink-logo.svg" alt="logo" width={74} height={29} />
           </Link>
-         </div> 
+        </div>
 
         <p className="text-customGray font-[500] text-[1.125rem] my-[1.88rem]">
           Get started now try our product
@@ -29,7 +26,7 @@ function FooterSection() {
           </div>
         </div>
 
-        <p className="text-white font-[500] text-[1.125rem] mt-[4.5rem]">
+        <p className="text-gray-500 font-[500] text-[1.125rem] mt-[4.5rem]">
           © 2024 QuenchX Inc. Copyright and rights reserved
         </p>
       </div>
@@ -86,8 +83,7 @@ function FooterSection() {
           </div>
         </div>
       </div>
-      </section>
-      </RevealSection>
+    </section>
   );
 }
 

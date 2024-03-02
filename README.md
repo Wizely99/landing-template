@@ -200,7 +200,8 @@ export const SOCIALS = {
 <summary><code>globals.css</code></summary>
 
 ```typescript
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,700;1,500;1,700&display=swap");
+
 
 @tailwind base;
 @tailwind components;
@@ -213,8 +214,9 @@ export const SOCIALS = {
 }
 
 body {
-  font-family: Inter;
+  font-family: "Cabin";
 }
+
 
 @layer utilities {
   .btn_white {
