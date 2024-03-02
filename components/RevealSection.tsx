@@ -9,8 +9,8 @@ interface RevealSectionProps {
 const RevealSection: React.FC<RevealSectionProps> = ({ children }) => {
   const ref = useRef(null);
   const inView = useInView(ref, {
-    once: false,
-    margin: "-200px -200px -200px -200px",
+    once: true,
+    margin: "-50px 100px -50px 0px",
   });
 
   const variants = {
